@@ -4,6 +4,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!--Carregar link Google-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,0" />
 <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
@@ -17,6 +19,132 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
+
+<style>
+
+</style>
+
+<script>
+    // Array de produtos
+    var produtos = [{
+            titulo: "Líder Analista de Processos e Suporte T.I.",
+            descricao: "Função atual",
+            tipoContrato: "CLT",
+            remuneracao: 3150.00,
+            periodo: "10/06/2021 - Aberto"
+        }, {
+            titulo: "Analista de Suporte T.I.",
+            descricao: "Função inicial",
+            tipoContrato: "CLT",
+            remuneracao: 2500.00,
+            periodo: "10/06/2021 - 03/01/2022"
+        }, {
+            titulo: "Analista de Suporte e Infraestrutura T.I.",
+            descricao: "Freelance",
+            tipoContrato: "PJ",
+            remuneracao: 5000.00,
+            periodo: "01/05/2021 - 31/05/2021"
+        }, {
+            titulo: "Técnico Eletrônico Senior",
+            descricao: "Contrato Temporário",
+            tipoContrato: "CLT",
+            remuneracao: 2467.53,
+            periodo: "07/01/2021 - 20/04/2021"
+        }, {
+            titulo: "Técnico Sistema Senior",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 3444.37,
+            periodo: "24/03/2016 - 22/04/2020"
+        }, {
+            titulo: "Técnico Sistema Pleno I",
+            descricao: "função inicial",
+            tipoContrato: "CLT",
+            remuneracao: 2147.54,
+            periodo: "24/03/2016 - 22/04/2020"
+        }, {
+            titulo: "Técnico em Instalação e Manutenção Pleno",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 2692.53,
+            periodo: "01/04/2015 - 11/01/2016"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1762.60,
+            periodo: "11/04/2013 - 11/11/2014"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1596.64,
+            periodo: "16/02/2011 - 21/02/2013"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1596.64,
+            periodo: "11/11/2010 - 10/01/2011"
+        }, {
+            titulo: "Técnico Eletrônico Elevadores e Escada Rolante",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1227.30,
+            periodo: "03/08/2009 - 01/06/2010"
+        }, {
+            titulo: "Analista de Transporte em Comercio Exterior",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 737.45,
+            periodo: "05/11/2008 - 25/03/2009"
+        }
+
+
+
+    ];
+
+    // Função para exibir o modal com as informações do produto
+    function exibirModal(index) {
+        var modal = document.getElementById("modal");
+        var modalTitle = document.getElementById("modal-title");
+        var modalDescription = document.getElementById("modal-description");
+        var modalContract = document.getElementById("modal-contract");
+        var modalSalary = document.getElementById("modal-salary");
+        var modalPeriod = document.getElementById("modal-period");
+
+        var produto = produtos[index];
+        modalTitle.textContent = produto.titulo;
+        modalDescription.textContent = produto.descricao;
+        modalContract.textContent = "Tipo de contrato: " + produto.tipoContrato;
+        modalSalary.textContent = "Remuneração: R$ " + produto.remuneracao.toFixed(2);
+        modalPeriod.textContent = "Período: " + produto.periodo;
+
+        modal.style.display = "block";
+    }
+
+    // Função para fechar o modal
+    function fecharModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+    }
+</script>
+
+
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="fecharModal()"></button>
+        <h2 id="modal-title"></h2>
+        <ul>
+            <li id="modal-description"></li>
+            <li id="modal-contract"></li>
+            <li id="modal-salary"></li>
+            <li id="modal-period"></li>
+        </ul>
+    </div>
+</div>
 
 
 
@@ -119,7 +247,9 @@
                                     <div id="tab-2023" style="display: inline;">
 
 
-                                        <h2 class="card-title">Líder Analista de Processos e Suporte T.I.</h2>
+                                        <h2>Líder Analista de Processos e Suporte T.I.<span type="button" class="material-symbols-outlined" onclick="exibirModal(0)">
+                                            open_in_new
+                                            </span></h2>
 
                                         <h3><code>Rumo | Atualmente</code></h3>
                                         <p>Liderança das equipes nas operações regionais da empresa Rumo, resolução de problemas, captação de resultados e prognósticos para alta gestão, administração e controle dos atendimentos locais nas unidades, bem como
@@ -128,7 +258,10 @@
                                         <div class="hr-text">
                                             <span>2022</span>
                                         </div>
-                                        <h2>Analista de Suporte T.I.</h2>
+                                        <h2>Analista de Suporte T.I.<span type="button" class="material-symbols-outlined" onclick="exibirModal(1)">
+                                            open_in_new
+                                            </span></h2>
+
                                         <h3><code>Rumo</code></h3>
                                         <ul type="disc">
                                             <li>Assistência e orientação a usuários corporativos (Cloud Cervello). - Resolução de problemas ocasionados por sistemas, hardware e redes (Citrix, SAP, Office, demais aplicações). - Análise, reparo, instalação
@@ -144,20 +277,28 @@
 
                                     </div>
                                     <div id="tab-2020" style="display: inline;">
-                                        <h2 class="card-title">Analista de Suporte e Infraestrutura T.I.</h2>
+                                        <h2>Analista de Suporte e Infraestrutura T.I.<span type="button" class="material-symbols-outlined" onclick="exibirModal(2)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>ARMI Consultoria e Treinamento</code></h3>
                                         <p>Contrato específico para Atendimento Help Desk e manutenção da infraestrutura de T.I. na empresa Lang Mekra.</p>
                                         <hr>
-                                        <h2>Técnico Eletrônico Senior</h2>
+                                        <h2>Técnico Eletrônico Senior<span type="button" class="material-symbols-outlined" onclick="exibirModal(3)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Marinha do Brasil</code></h3>
+
                                         Manutenção Eletrônica, testes e desenvolvimento de software baixo nível
 
                                     </div>
                                     <div id="tab-2019" style="display: inline;">
-                                        <h2>Técnico Sistemas Senior</h2>
+                                        <!--Função-->
+                                        <h2>Técnico Sistemas Senior<span type="button" class="material-symbols-outlined" onclick="exibirModal(4)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>E-vertical</code></h3>
-                                        <p>Atuação a nível operacional no Suporte técnico e Gerenciamento dos sistemas SDAI, SAP, SCA e Sistema de Segurança na base de clientes da empresa, atividades envolvia manutenção de ativos Controladoras, Gerenciadoras,
-                                            Periféricos, Manutenção em Servidores e Sistemas Supervisórios.</p>
+                                        <p>Manutenção, implantação e Sustentação da Infraestrutura e Sistemas SDAI, SAP, SCA, Controle de Acesso, Softwares para automação, controle de insumos e prognósticos de consumo, atualização de projetos prediais, suporte
+                                            técnico em ativos, Controladoras, Gerenciadoras, Periféricos, Servidores Storage e Sistemas Supervisórios, bem como a outras equipes regionais, na base de clientes da empresa.</p>
                                         <p><strong>Resultados atingidos:</strong> Recuperado a automação do Shopping Iguatemi e incluído na operação de rotina da equipe de manutenção atuando com programação horária, sendo que anteriormente não estava sendo
                                             utilizado, recuperado o sistema de alarme de incêndio, antes estava funcional somente 35%. Efetuado o mapeamento e levantamento da base de dados de todos os dispositivos, foi alocados ao sistema medidores de
                                             insumos e implantado software de coleta de dados, também, devido ao rendimento e evolução dos sistemas foram atribuídos novas funções e agregando valor a empresa E- vertical.</p>
@@ -167,24 +308,34 @@
                                         <h3><code>E-vertical</code></h3>
                                         <p>Atuação a nível operacional e Gerenciamento do Sistema de Automação, Incêndio e Sistemas de Segurança Eletrônica do Shopping Iguatemi Esplanada, atividades envolvia manutenção de ativos, administração do sistema
                                             como um todo.</p>
-                                        <hr>
-                                        <h3>Técnico Sistema Pleno I</h3>
+                                        <div class="hr-text">
+                                            <span>2018</span>
+                                        </div>
+                                        <h2>Técnico Sistema Pleno I<span type="button" class="material-symbols-outlined" onclick="exibirModal(5)">
+                                            open_in_new
+                                            </span></h2>
                                         <p>Atuação a nível operacional dos Sistemas de Automação e Incêndio do Shopping Iguatemi Esplanada, onde, consistia o Mapeamento e levantamento dos dispositivos, além da correção, instalação de novas soluções para
                                             operação do shopping Iguatemi.</p>
                                     </div>
                                     <div id="tab-2014" style="display: inline;">
-                                        <h2>Técnico em Instalação e Manutenção Pleno</h2>
+                                        <h2>Técnico em Instalação e Manutenção Pleno<span type="button" class="material-symbols-outlined" onclick="exibirModal(6)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Vigzul</code></h3>
                                         <p>Manutenção e Instalação de Sistemas de Monitoramento e segurança, manutenção em sistemas e infraestrutura de Redes. Resultados atingidos: Melhor média da empresa em atendimento e resolução de problemas nos clientes.</p>
                                     </div>
                                     <div id="tab-2013" style="display: inline;">
-                                        <h2>Técnico Eletrônico</h2>
+                                        <h2>Técnico Eletrônico<span type="button" class="material-symbols-outlined" onclick="exibirModal(7)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Active Engenharia</code></h3>
                                         <p>Atividade operacional em campo nas agências da Caixa Econômica Federal e nas Agências do Banco Bradesco, realizando manutenção em sistemas de segurança, redes, infraestrutura, manutenção de equipamentos, Microcomputadores
                                             (PCbasic), HDs e Sistemas Operacionais Linux e Windows. Resultados atingidos: Atingida as metas de atendimento e demanda de chamados, suporte técnico operacional em campo.</p>
                                     </div>
                                     <div id="tab-2011" style="display: inline;">
-                                        <h2>Técnico Eletrônico</h2>
+                                        <h2>Técnico Eletrônico<span type="button" class="material-symbols-outlined" onclick="exibirModal(8)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Sensormatic Solutions América Latina</code></h3>
                                         <p>Atividades de implantação, manutenção e gerenciamento dos sistemas de CFTV, SAI, SCA, Sistemas EAS/RF, Redes de computadores, infraestrutura, Manutenção de comandos, PCs, configuração de softwares e suporte técnico
                                             aos usuários, nos estabelecimentos comerciais e industriais da base de clientes da empresa como: Grupo Pão de Açúcar, Commeta, Kalunga, Walmart, Carrefour, Lojas Americanas, Lelis Blanc, Handbook, Nike, Planet
@@ -192,12 +343,16 @@
                                             a disposição e me destaquei como profissional, obtive uma excelente média de avaliação de desempenho.</p>
                                     </div>
                                     <div id="tab-2010" style="display: inline;">
-                                        <h2>Técnico Eletrônico</h2>
+                                        <h2>Técnico Eletrônico<span type="button" class="material-symbols-outlined" onclick="exibirModal(9)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Grupo Souza Lima</code></h3>
                                         <p>Administração e Gerenciamento dos Sistemas de Segurança da empresa Aurora Eadi, efetuando corretivas e preventivas mantendo as operações.</p>
                                     </div>
                                     <div id="tab-2009" style="display: inline;">
-                                        <h2>Técnico Eletrônico</h2>
+                                        <h2>Técnico Eletrônico<span type="button" class="material-symbols-outlined" onclick="exibirModal(10)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Elevadores Atlas Shindler</code></h3>
                                         <p>Manutenção Preventiva e corretiva em Elevadores e escadas rolantes Tecnologia Atlas Shindler. Técnico Especialista em Freio de Segurança (diversos sistemas de freio) comandos eletrônicos conta-toras relés monitores
                                             de velocidade operadores de porta motores rolamentos e sistemas elétricos estabelecimentos industriais e comerciais. Responsável por 64 Elevadores, atingi a meta mensal de ajuste e manutenção de Freios das máquinas
@@ -205,7 +360,9 @@
                                         </p>
                                     </div>
                                     <div id="tab-2008" style="display: inline;">
-                                        <h2>Auxiliar Administrativo</h2>
+                                        <h2>Analista de Transporte em Comercio Exterior<span type="button" class="material-symbols-outlined" onclick="exibirModal(11)">
+                                            open_in_new
+                                            </span></h2>
                                         <h3><code>Prefeitura Municipal de Sorocaba</code></h3>
                                         <p>Atividades Administrativas conforme designação e atuação nas secretárias do munícipio.</p>
                                     </div>
@@ -317,3 +474,24 @@
 
 
 </html>
+<!--Atual-->
+<div id="modal" class="modal modal-blur fade" name="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-sucess"></div>
+            <div class="modal-body text-center py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                       <path d="M12 9v2m0 4v.01" />
+                       <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                   </svg>
+                <h3>Informações específicas</h3>
+                <p>
+                    <div class="text-muted" id="modal-description">
+
+
+
+
+                    </div>
+            </div>
