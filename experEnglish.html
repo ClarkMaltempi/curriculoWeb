@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!--Carregar link Google-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,0" />
+<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-payments.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-vendors.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/about.css">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+<style>
+
+</style>
+
+<script>
+    // Array de produtos
+    var produtos = [{
+            titulo: "Líder Analista de Processos e Suporte T.I.",
+            descricao: "Função atual",
+            tipoContrato: "CLT",
+            remuneracao: 3150.00,
+            periodo: "10/06/2021 - Aberto"
+        }, {
+            titulo: "Analista de Suporte T.I.",
+            descricao: "Função inicial",
+            tipoContrato: "CLT",
+            remuneracao: 2500.00,
+            periodo: "10/06/2021 - 03/01/2022"
+        }, {
+            titulo: "Analista de Suporte e Infraestrutura T.I.",
+            descricao: "Freelance",
+            tipoContrato: "PJ",
+            remuneracao: 5000.00,
+            periodo: "01/05/2021 - 31/05/2021"
+        }, {
+            titulo: "Técnico Eletrônico Senior",
+            descricao: "Contrato Temporário",
+            tipoContrato: "CLT",
+            remuneracao: 2467.53,
+            periodo: "07/01/2021 - 20/04/2021"
+        }, {
+            titulo: "Técnico Sistema Senior",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 3444.37,
+            periodo: "24/03/2016 - 22/04/2020"
+        }, {
+            titulo: "Técnico Sistema Pleno I",
+            descricao: "função inicial",
+            tipoContrato: "CLT",
+            remuneracao: 2147.54,
+            periodo: "24/03/2016 - 22/04/2020"
+        }, {
+            titulo: "Técnico em Instalação e Manutenção Pleno",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 2692.53,
+            periodo: "01/04/2015 - 11/01/2016"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1762.60,
+            periodo: "11/04/2013 - 11/11/2014"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1596.64,
+            periodo: "16/02/2011 - 21/02/2013"
+        }, {
+            titulo: "Técnico Eletrônico",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1596.64,
+            periodo: "11/11/2010 - 10/01/2011"
+        }, {
+            titulo: "Técnico Eletrônico Elevadores e Escada Rolante",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 1227.30,
+            periodo: "03/08/2009 - 01/06/2010"
+        }, {
+            titulo: "Analista de Transporte em Comercio Exterior",
+            descricao: "Ultima função",
+            tipoContrato: "CLT",
+            remuneracao: 737.45,
+            periodo: "05/11/2008 - 25/03/2009"
+        }
+
+
+
+    ];
+
+    // Função para exibir o modal com as informações do produto
+    function exibirModal(index) {
+        var modal = document.getElementById("modal");
+        var modalTitle = document.getElementById("modal-title");
+        var modalDescription = document.getElementById("modal-description");
+        var modalContract = document.getElementById("modal-contract");
+        var modalSalary = document.getElementById("modal-salary");
+        var modalPeriod = document.getElementById("modal-period");
+
+        var produto = produtos[index];
+        modalTitle.textContent = produto.titulo;
+        modalDescription.textContent = produto.descricao;
+        modalContract.textContent = "Tipo de contrato: " + produto.tipoContrato;
+        modalSalary.textContent = "Remuneração: R$ " + produto.remuneracao.toFixed(2);
+        modalPeriod.textContent = "Período: " + produto.periodo;
+
+        modal.style.display = "block";
+    }
+
+    // Função para fechar o modal
+    function fecharModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+    }
+</script>
+
+
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="fecharModal()"></button>
+        <h2 id="modal-title"></h2>
+        <ul>
+            <li id="modal-description"></li>
+            <li id="modal-contract"></li>
+            <li id="modal-salary"></li>
+            <li id="modal-period"></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+</head>
+
+<body onload="Ativar()">
+
+    <div class="page">
+        <!-- Sidebar -->
+        <aside class="navbar navbar-vertical navbar-expand-sm navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <h1 class="navbar-brand navbar-brand-autodark">
+                    <a href="#">
+
+                        CLARK MALTEMPI
+                        <!--<img src="https://preview.tabler.io/static/logo-white.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">-->
+                    </a>
+                </h1>
+                <div class="collapse navbar-collapse" id="sidebar-menu">
+                    <ul class="navbar-nav pt-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="indexEnglish.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                </svg>
+                                <span class="nav-link-title" style="padding-left: 2%;"> Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experEnglish.html">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                                        <line x1="12" y1="12" x2="20" y2="7.5" />
+                                        <line x1="12" y1="12" x2="12" y2="21" />
+                                        <line x1="12" y1="12" x2="4" y2="7.5" />
+                                        <line x1="16" y1="5.25" x2="8" y2="9.75" />
+                                    </svg>
+
+                                <span class="nav-link-title" style="padding-left: 2%;">
+                                    Professional Experience
+                    </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comptEnglish.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-files" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M15 3v4a1 1 0 0 0 1 1h4"></path>
+                                    <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z"></path>
+                                    <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2"></path>
+                                </svg>
+                                <span class="nav-link-title" style="padding-left: 2%;">
+                                    Competencies
+                    </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="page-header d-print-none">
+                <div class="container-xl">
+                    <div class="row g-2 align-items-center">
+                        <div class="col">
+                            <h2 class="page-title">
+                                Professional Experience
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="container-xl">
+                    <div class="row row-deck">
+
+                        <div class="col-md-12 col-lg-8">
+                            <div class="card card-stacked">
+
+
+                                <div id="tabs" class="card-body">
+
+
+                                    <div id="tab-2023" style="display: inline;">
+
+                                        <h2>Lead IT Process and Support Analyst<span type="button" class="material-symbols-outlined" onclick="showModal(0)">
+                                            open_in_new
+                                            </span></h2>
+
+                                        <h3><code>Rumo | Currently</code></h3>
+                                        <p>Leadership of regional teams at Rumo, problem-solving, result collection, and forecasts for top management, administration, and control of local support at the units, as well as specialized technical support.</p>
+                                        <p><strong>Results:</strong> Implemented a web platform for internal process control and management, inventory management, mail dispatch, and standardization of team support.</p>
+                                        <div class="hr-text">
+                                            <span>2022</span>
+                                        </div>
+                                        <h2>IT Support Analyst<span type="button" class="material-symbols-outlined" onclick="showModal(1)">
+                                            open_in_new
+                                            </span></h2>
+
+                                        <h3><code>Rumo</code></h3>
+                                        <ul type="disc">
+                                            <li>Assistance and guidance to corporate users (Cloud Cervello). - Troubleshooting caused by systems, hardware, and networks (Citrix, SAP, Office, and other applications). - Analysis, repair, installation, and formatting
+                                                of the Windows operating system.
+
+                                                <li>Troubleshooting caused by systems, hardware, and networks (Citrix, SAP, Office, and other applications).
+                                                    <li>Analysis, repair, installation, and formatting of the Windows operating system.
+                                                        <li>Maintenance of desktop and laptop devices.
+                                                            <li>Development of procedures, reports, systems, spreadsheets, and automated applications.
+                                                                <li>Technical assistance in operational areas.
+                                                                    <li>Analysis of Windows AD users.
+                                        </ul>
+
+                                    </div>
+                                    <div id="tab-2020" style="display: inline;">
+                                        <h2>IT Support and Infrastructure Analyst<span type="button" class="material-symbols-outlined" onclick="showModal(2)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>ARMI Consultoria e Treinamento</code></h3>
+                                        <p>Specific contract for Help Desk support and IT infrastructure maintenance at Lang Mekra.</p>
+                                        <hr>
+                                        <h2>Senior Electronic Technician<span type="button" class="material-symbols-outlined" onclick="showModal(3)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Brazilian Navy</code></h3>
+
+                                        Electronic maintenance, testing, and low-level software development.
+
+                                    </div>
+                                    <div id="tab-2019" style="display: inline;">
+                                        <!--Function-->
+                                        <h2>Senior Systems Technician<span type="button" class="material-symbols-outlined" onclick="showModal(4)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>E-vertical</code></h3>
+                                        <p>Maintenance, implementation, and support of SDAI, SAP, SCA, Access Control, automation software, input control, and consumption forecasts infrastructure and systems, updating building projects, technical support
+                                            on assets, Controllers, Managers, Peripherals, Storage Servers, and Supervisory Systems, as well as other regional teams, for the company's client base.</p>
+                                        <p><strong>Achieved Results:</strong> Recovered the automation of Shopping Iguatemi and included it in the team's routine operation, previously not in use, recovered the fire alarm system, previously functional only
+                                            at 35%. Mapped and surveyed the database of all devices, meters for inputs were allocated to the system, and data collection software was implemented. Due to the performance and evolution of the systems, new
+                                            functions were assigned, adding value to the E-vertical company.</p>
+                                    </div>
+                                    <div id="tab-2016" style="display: inline;">
+                                        <h2>Systems Technician II<span type="button" class="material-symbols-outlined" onclick="showModal(5)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>E-vertical</code></h3>
+                                        <p>Operational level and Management of the Automation System, Fire and Electronic Security Systems of Shopping Iguatemi Esplanada, activities involved maintenance of assets, system administration as a whole.</p>
+                                        <div class="hr-text">
+                                            <span>2018</span>
+                                        </div>
+                                        <h2>Systems Technician I<span type="button" class="material-symbols-outlined" onclick="showModal(6)">
+                                            open_in_new
+                                            </span></h2>
+                                        <p>Operational level of the Automation and Fire Systems of Shopping Iguatemi Esplanada, which included mapping and surveying of devices, as well as correction, installation of new solutions for the operation of Shopping
+                                            Iguatemi.
+                                        </p>
+                                    </div>
+                                    <div id="tab-2014" style="display: inline;">
+                                        <h2>Installation and Maintenance Technician Senior<span type="button" class="material-symbols-outlined" onclick="showModal(7)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Vigzul</code></h3>
+                                        <p>Maintenance and installation of Monitoring and security systems, maintenance of network systems and infrastructure. Achieved Results: Best company average in customer service and problem resolution.</p>
+                                    </div>
+                                    <div id="tab-2013" style="display: inline;">
+                                        <h2>Electronic Technician<span type="button" class="material-symbols-outlined" onclick="showModal(8)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Active Engineering</code></h3>
+                                        <p>Operational activities in the branches of Caixa Econômica Federal and Banco Bradesco, performing maintenance on security systems, networks, infrastructure, equipment maintenance, Microcomputers (PCbasic), HDs, and
+                                            Linux and Windows Operating Systems. Achieved Results: Met service and call demand targets, operational technical support in the field.</p>
+                                    </div>
+                                    <div id="tab-2011" style="display: inline;">
+                                        <h2>Electronic Technician<span type="button" class="material-symbols-outlined" onclick="showModal(9)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Sensormatic Solutions Latin America</code></h3>
+                                        <p>Activities involving implementation, maintenance, and management of CCTV systems, UPS, Access Control Systems, EAS/RF Systems, computer networks, infrastructure, command maintenance, PCs, software configuration,
+                                            and technical support to users in commercial and industrial establishments of the company's customer base such as Grupo Pão de Açúcar, Commeta, Kalunga, Walmart, Carrefour, Lojas Americanas, Lelis Blanc, Handbook,
+                                            Nike, Planet Girls, Drogaria SP, Renner, Riachuelo, and others in the state of São Paulo. Achieved Results: Completed over 1600 service calls at an average of 70 calls per month in different regions, always
+                                            available and excelled as a professional, achieved an excellent performance rating.</p>
+                                    </div>
+                                    <div id="tab-2010" style="display: inline;">
+                                        <h2>Electronic Technician<span type="button" class="material-symbols-outlined" onclick="showModal(10)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Grupo Souza Lima</code></h3>
+                                        <p>Administration and management of security systems at Aurora Eadi company, performing corrective and preventive actions to maintain operations.</p>
+                                    </div>
+                                    <div id="tab-2009" style="display: inline;">
+                                        <h2>Electronic Technician<span type="button" class="material-symbols-outlined" onclick="showModal(11)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Atlas Schindler Elevators</code></h3>
+                                        <p>Preventive and corrective maintenance on Atlas Schindler Elevators and escalators. Specialized Technician in Safety Brakes (various brake systems), electronic commands, contactors, speed monitors, door operators,
+                                            motors, bearings, and electrical systems in industrial and commercial establishments. Responsible for 64 Elevators, achieved the monthly goal of adjusting and maintaining Brakes (15 in total) and maintained
+                                            the quality standards in maintenance.</p>
+                                    </div>
+                                    <div id="tab-2008" style="display: inline;">
+                                        <h2>Foreign Trade Transportation Analyst<span type="button" class="material-symbols-outlined" onclick="showModal(12)">
+                                            open_in_new
+                                            </span></h2>
+                                        <h3><code>Municipality of Sorocaba</code></h3>
+                                        <p>Administrative activities as designated and work in the municipal secretariats.</p>
+                                    </div>
+                                    <div id="tab-2007" style="display: inline;">
+                                        <h2>Technical Internship</h2>
+                                        <h3><code>CIEE - Center for Integration of Business and Education</code></h3>
+                                        <p>Internship as an Electronics Technician in a telecommunications company, involving VoIP technology implementation, servers, network management, installation, and configuration of PABX.</p>
+                                    </div>
+
+
+
+
+                                    <!--  </main>-->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-4">
+                            <!--<div class="card">-->
+                            <div class="card-body" style="height: 10rem">
+
+
+                                <ul class="DB_Timeline" id="lista_menu">
+
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)" id="ini">
+                                                2023
+                                            </span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2020</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2019</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2016</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2014</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2013</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2011</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2010</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2009</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2008</span>
+                                    </li>
+                                    <li class="DB_Timeline__item">
+                                        <span class="DB_Timeline__text" onclick="mostrarAtivo(this)">2007</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+<script src="common/jquery/jquery-3.6.0.min.js"></script>
+
+<script>
+    function Ativar() {
+        var tag_li = document.getElementById('ini');
+        tag_li.style.backgroundColor = "red";
+        tag_li.click();
+    }
+
+    $('.DB_Timeline__item').on('click', function() {
+        $('#tabs > div:visible').hide();
+        $('#tab-' + $.trim($(this).text())).show();
+    });
+
+    function mostrarAtivo(tag) {
+        var tag_li = document.getElementById('lista_menu');
+        var tag_a = tag_li.getElementsByTagName('span');
+        for (i = 0; i < tag_a.length; i++) {
+            //tag_a[i].style.color = "";
+            tag_a[i].style.backgroundColor = "";
+        }
+        //tag.style.color = "orange";
+        tag.style.backgroundColor = "red";
+
+    }
+</script>
+
+
+</html>
+<!--Atual-->
+<div id="modal" class="modal modal-blur fade" name="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-sucess"></div>
+            <div class="modal-body text-center py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                       <path d="M12 9v2m0 4v.01" />
+                       <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                   </svg>
+                <h3>Informações específicas</h3>
+                <p>
+                    <div class="text-muted" id="modal-description">
+
+
+
+
+                    </div>
+            </div>
