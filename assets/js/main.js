@@ -28,7 +28,7 @@ function mostrarAtivo(tag) {
     descricao: "Função atual",
     tipoContrato: "CLT",
     remuneracao: 3150.00,
-    periodo: "10/06/2021 - Aberto"
+    periodo: "10/06/2021 - 10/03/2024"
 }, {
     titulo: "Analista de Suporte T.I.",
     descricao: "Função inicial",
