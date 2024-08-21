@@ -95,6 +95,14 @@ function mostrarAtivo(tag) {
     tipoContrato: "CLT",
     remuneracao: 737.45,
     periodo: "05/11/2008 - 25/03/2009"
+},{
+    
+    titulo: "Analista de Suporte T.I.",
+    descricao: "Função atual",
+    tipoContrato: "CLT",
+    remuneracao: 3100.00,
+    periodo: "04/07/2023 - Aberto"
+    
 }
 
 
